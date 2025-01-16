@@ -1,0 +1,31 @@
+name: Backend test & lint
+
+on:
+  workflow_run:
+    workflows:
+      - E2E test
+    types:
+      - completed
+    branches:
+      - main
+      - dev
+
+jobs:
+  lint_and_test_pipeline:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+        
+      - name: Install dependencies
+        run: npm install
+
+      - name: Run Tests and Linter
+        run: |
+          npm run lint
+          npm run test
