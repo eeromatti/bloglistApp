@@ -5,7 +5,6 @@ import supertest from 'supertest'
 import assert from 'assert'
 import app from '../app.js'
 import { blogsInDb, usersInDb } from './helper.js'
-import bcrypt from 'bcrypt'
 import jwt from 'jsonwebtoken'
 
 const api = supertest(app)
