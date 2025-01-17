@@ -1,0 +1,23 @@
+name: Deployment pipeline
+
+on:
+  workflow_run:
+    workflows:
+      - E2E test
+    types:
+      - completed
+
+jobs:
+  simple_deployment_pipeline:
+    runs-on: ubuntu-20.04
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Render Deployment
+        uses: sws2apps/render-deployment@v1.8.0
+        with:
+          serviceId: ${{ secrets.SERVICE_ID }}
+          apiKey: ${{ secrets.API_KEY }}
+          multipleDeployment: false
+      
