@@ -4,6 +4,12 @@ on:
   pull_request:
     branches:
       - main
+  workflow_run:
+    workflows:
+      - Deployment pipeline
+    types:
+      - completed
+
 jobs:
   health_check_pipeline:
     runs-on: ubuntu-20.04
