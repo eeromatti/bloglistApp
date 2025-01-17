@@ -5,9 +5,11 @@ on:
     branches:
       - main
       - dev
-  workflow_run:
-    workflows:
-      - Backend test & lint
+  # workflow_run:
+    # workflows:
+    #   - Backend test & lint
+    # types:
+    #   - completed
 
 jobs:
   playwright:
