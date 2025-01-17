@@ -1,11 +1,6 @@
 name: Backend test & lint
-
 on:
-  workflow_run:
-    workflows:
-      - E2E test
-    types:
-      - completed
+  push:
     branches:
       - main
       - dev
