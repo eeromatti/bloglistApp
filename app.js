@@ -1,4 +1,4 @@
-// blogListApp
+// bloglistApp
 
 import { MONGODB_URI, PORT } from './utils/config.js'
 import express from 'express'
