@@ -6,7 +6,9 @@ on:
       - main
   schedule:
       - cron:  '30 12 * * *'
-
+  workflow_run:
+    workflows:
+      - Deployment pipeline
 
 jobs:
   health_check_pipeline:
