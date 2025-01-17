@@ -1,16 +1,6 @@
 name: Deployment pipeline
 
-env:
-  CONDITION: ${{ !contains(github.event.head_commit.message, '#skip') && github.event_name == 'push' && github.ref == 'refs/heads/main' }}
-
 on:
-  # push:
-  #   branches:
-  #     - main
-  # pull_request:
-  #   branches: [main]
-  #   types: [opened, synchronize]
-  # workflow_dispatch:
   workflow_run:
     workflows:
       - E2E test
@@ -21,30 +11,13 @@ jobs:
   simple_deployment_pipeline:
     runs-on: ubuntu-20.04
     steps:
-      - if: ${{ env.CONDITION == 'true' }}
-        name: Checkout repository
+      - name: Checkout repository
         uses: actions/checkout@v4
 
-      - if: ${{ env.CONDITION == 'true' }}
-        name: Render Deployment
+      - name: Render Deployment
         uses: sws2apps/render-deployment@v1.8.0
         with:
           serviceId: ${{ secrets.SERVICE_ID }}
           apiKey: ${{ secrets.API_KEY }}
           multipleDeployment: false
       
-
-#   tag_release:
-#     needs: [simple_deployment_pipeline]
-#     runs-on: ubuntu-20.04
-#     steps:
-#       - if: ${{ env.CONDITION == 'true' }}
-#         name: Checkout repository
-#         uses: actions/checkout@v4
-        
-#       - if: ${{ env.CONDITION == 'true' }}
-#         name: Bump version and push tag
-#         uses: anothrNick/github-tag-action@1.71.0
-#         env:
-#           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-#           DEFAULT_BUMP: patch
