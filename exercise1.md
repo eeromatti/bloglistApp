@@ -1,0 +1,8 @@
+# exercise1
+<p>
+CI meaning continuous integration refers to a process where developer changes are merged to the main branch. Usually, a developer wants to include some of the following steps as a part of CI: linting, building, testing, packaging, deployment. For a Javascript project some of the most common tools for CI are GitHub Actions and Jenkins. GitHub Actions may be a tempting alternative for those projects where GitHub is used for the version control. However, according to several sources Jenkins is an acknowledged and appreciated solutions for managing CI steps. According to lokos-write.hashnote.dev blog, both solutions are highly configurable and flexible for setting up the perfect CI pipeline for my project. However, the trade-off with these two solutions is that they might not be the most beginner-friendly from user perspective. 
+
+Based on the same blog, some alternatives for GitHub Actions and Jenkins are e.g. Travis CI, CircleCI and GitLab CI/CD. Travis is said to be a popular choice for open-source projects, and it has a seamless integration with GitHub. However, that comes with a price – it can get a bit expensive with private repositories. CircleCI should be fast and flexible but it may require more configuration than other tools. Also the price can get quite high with larger projects. GitLab CI/CD provides a comprehensive solution that’s build into the GitLab environment. This may be the go to especially if using also the other parts of GitLab suite. 
+
+For a project with a team of 6 ppl, the best choice may be to go with cloud-based environment. This means less configuration and less hassle with the CI setup. Also the expenses for a project with 6 ppl should not be too bad with a cloud-based solution. 
+</p>
