@@ -1,9 +1,6 @@
 name: Periodic health check
 
 on:
-  push:
-    branches:
-      - main
   workflow_run:
     workflows:
       - Deployment pipeline
