@@ -1,12 +1,9 @@
 name: Periodic health check
 
 on:
-  workflow_run:
-    workflows:
-      - Deployment pipeline
-    types:
-      - completed
-
+  pull_request:
+    branches:
+      - main
 jobs:
   health_check_pipeline:
     runs-on: ubuntu-20.04

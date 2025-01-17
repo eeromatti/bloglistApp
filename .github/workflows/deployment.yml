@@ -1,11 +1,9 @@
 name: Deployment pipeline
 
 on:
-  workflow_run:
-    workflows:
-      - E2E test
-    types:
-      - completed
+  pull_request:
+    branches:
+      - main
 
 jobs:
   simple_deployment_pipeline:
