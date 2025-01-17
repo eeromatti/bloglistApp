@@ -4,6 +4,8 @@ on:
   workflow_run:
     workflows:
       - Deployment pipeline
+    types:
+      - completed
 
 jobs:
   health_check_pipeline:
