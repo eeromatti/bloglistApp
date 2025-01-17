@@ -14,6 +14,8 @@ on:
   workflow_run:
     workflows:
       - E2E test
+    types:
+      - completed
 
 jobs:
   simple_deployment_pipeline:

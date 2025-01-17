@@ -6,8 +6,10 @@ on:
       - main
       - dev
   workflow_run:
-    workflows:
-      - Backend test & lint
+    # workflows:
+    #   - Backend test & lint
+    # types:
+    #   - completed
 
 jobs:
   playwright:
